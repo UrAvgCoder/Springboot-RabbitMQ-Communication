@@ -10,7 +10,7 @@ Producer - Responsible for creating a POJO object, Encrpyting and transfering to
 RabbitMQConfig - Contains all the Rabbit MQ configuration files required for the process
 Consumer - Responsible for collecting the data from MQ, Decrypting and storing the data in a list for simplicity
 
-#Exposed End-Points:
+# Exposed End-Points:
 1) /send - Sends the encrypted data to the MQ
 2) /getMessage - Displays the list populated by Consumer on the page
 
