@@ -1,8 +1,5 @@
 package com.example.rabbitmqdemo.producer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,15 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.rabbitmqdemo.consumer.NotificationConsumer;
 import com.example.rabbitmqdemo.entity.Notification;
 import com.example.rabbitmqdemo.util.DataEncrypt;
+import com.example.protobuf.*;
 
 @RestController
 public class NotificationProducer {
 
 	@Autowired
 	private RabbitTemplate template;
-	
-	@Autowired
-	private NotificationConsumer notifConsumer;
 
 	@Value("${rabbitmq.props.exchange}")
 	private String exchange;
@@ -35,15 +30,16 @@ public class NotificationProducer {
 
 	@PostMapping(path = "/send")
 	public String sendNotif(@RequestBody Notification notification) {
-		notification.setMessage(DataEncrypt.encrypt(notification.getMessage(), secretKey));
-		notification.setStatus(DataEncrypt.encrypt(notification.getStatus(), secretKey));
-		template.convertAndSend(exchange, routingKey, notification);
+		byte[] data = ProtoBufDemo.Notification.newBuilder().setMessage(DataEncrypt.encrypt(notification.getMessage(), secretKey))
+				.setStatus(DataEncrypt.encrypt(notification.getStatus(), secretKey)).build().toByteArray();
+		template.convertAndSend(exchange, routingKey, data);
 		return "Notification Sent!";
 	}
 
 	@GetMapping("/getMessage")
 	public String getNotif() {
-		return notifConsumer.getList().toString(); 
+		return ProtoBufDemo.Notification.newBuilder().setMessage("Hello World!").toString()
+				.concat(ProtoBufDemo.Notification.newBuilder().setStatus("Sent!").toString());
 	}
 
 }

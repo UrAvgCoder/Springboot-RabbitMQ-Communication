@@ -7,8 +7,10 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.example.protobuf.ProtoBufDemo;
 import com.example.rabbitmqdemo.entity.Notification;
 import com.example.rabbitmqdemo.util.DataEncrypt;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 @Component
 public class NotificationConsumer {
@@ -23,8 +25,11 @@ public class NotificationConsumer {
 	}
 
 	@RabbitListener(queues = "${rabbitmq.props.queue}")
-	public void readMessageInQueue(Notification notification) {
-		list.add(new Notification(DataEncrypt.decrypt(notification.getMessage(), secretKey),
-				DataEncrypt.decrypt(notification.getStatus(), secretKey)));
+	public void readMessageInQueue(final byte[] data) {
+		try {
+			System.out.println(DataEncrypt.decrypt(ProtoBufDemo.Notification.parseFrom(data).getMessage(), secretKey));
+		} catch (InvalidProtocolBufferException ipbe) {
+			System.out.println("ERROR: Unable to instantiate Proto instance - " + ipbe);
+		}
 	}
 }
