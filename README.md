@@ -1,4 +1,4 @@
-# Springboot-RabbitMQ-Communication
+# Springboot RabbitMQ Communication
 A basic exposure to RabbitMQ communication between Microservices
 
 ## What is this?
