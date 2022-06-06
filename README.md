@@ -2,7 +2,7 @@
 A basic exposure to RabbitMQ communication between Microservices
 
 ## What is this?
-This is a simple demo project created using Springboot which utilizes a non-http(s) way of communication between the Microservices. This might be useful to others or to my future self. There are hundreds of tutorails which explain about communication b/w Microservices using HTTP but felt this is not exposed much so here we are.
+This is a simple demo project created using Springboot which utilizes a non-http(s) way of communication between the Microservices. This might be useful to others or to my future self. There are hundreds of tutorails which explain about communication b/w Microservices using HTTP but very minimal when it comes to non-http(s) that is AMQP, so felt this is not exposed much so here we are.
 
 ## What does it include?
 1) Communication using RabbitMQ
