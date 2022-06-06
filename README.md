@@ -23,4 +23,5 @@ This is a simple demo project created using Springboot which utilizes a non-http
 I will be constantly updating this repo with more useful information that I might learn and document it using this repo. This will definitely help others and also myself once I return back to this field after a few days.
 
 Planned Features Include:
-1) ~~Implementing Google Protobuf to provider data serliazation~~ Here is implementation of [Protobuf](https://github.com/UrAvgCoder/Springboot-RabbitMQ-Communication/tree/protobuf-included).
+1) ~~Implementing Google Protobuf to provider data serliazation~~ Here is implementation of [Protobuf](https://github.com/UrAvgCoder/Springboot-RabbitMQ-Communication/tree/protobuf-included)
+2) Implement a proper Consumer Microservice separately which communicates via RabbitMQ with Serialized Encrpyed Data
