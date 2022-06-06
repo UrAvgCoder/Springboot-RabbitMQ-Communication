@@ -7,7 +7,7 @@ This is a simple demo project created using Springboot which utilizes a non-http
 ## What does it include?
 1) Communication using RabbitMQ
 2) Slapped a decent AES Encrpytion/Decrpytion algorithm which helps secure the data while communicating
-3) 1 Microservice which contains Producer and Consumer (may it be the readers wish to implement these separately) 
+3) Single Microservice which contains Producer and Consumer (may it be the readers wish to implement these separately) 
 
 ## What is planned next?
 I will be constantly updating this repo with more useful information that I might learn and document it using this repo. This will definitely help others and also myself once I return back to this field after a few days.
