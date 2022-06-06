@@ -5,10 +5,10 @@ A basic exposure to RabbitMQ communication between Microservices
 This is a simple demo project created using Springboot which utilizes a non-http(s) way of communication between the Microservices. This might be useful to others or to my future self. There are hundreds of tutorails which explain about communication b/w Microservices using HTTP but very minimal when it comes to non-http(s) that is AMQP, so felt this is not exposed much so here we are.
 
 ## Architecture
-Entity - A simple POJO which contains bootstrap methods (Constructors, Getters/Setters)
-Producer - Responsible for creating a POJO object, Encrpyting and transfering to the MQ
-RabbitMQConfig - Contains all the Rabbit MQ configuration files required for the process
-Consumer - Responsible for collecting the data from MQ, Decrypting and storing the data in a list for simplicity
+1) Entity - A simple POJO which contains bootstrap methods (Constructors, Getters/Setters)
+2) Producer - Responsible for creating a POJO object, Encrpyting and transfering to the MQ
+3) RabbitMQConfig - Contains all the Rabbit MQ configuration files required for the process
+4) Consumer - Responsible for collecting the data from MQ, Decrypting and storing the data in a list for simplicity
 
 ### Exposed End-Points:
 1) /send - Sends the encrypted data to the MQ
