@@ -24,4 +24,4 @@ I will be constantly updating this repo with more useful information that I migh
 
 Planned Features Include:
 1) ~~Implementing Google Protobuf to provider data serliazation~~ Here is implementation of [Protobuf](https://github.com/UrAvgCoder/Springboot-RabbitMQ-Communication/tree/protobuf-included)
-2) Implement a proper Consumer Microservice separately which communicates via RabbitMQ with Serialized Encrpyed Data
+2) Implement a proper Consumer Microservice separately which communicates via RabbitMQ with Serialized Encrypted Data
