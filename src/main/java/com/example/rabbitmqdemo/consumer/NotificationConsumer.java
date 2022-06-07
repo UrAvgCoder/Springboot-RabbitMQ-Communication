@@ -24,12 +24,12 @@ public class NotificationConsumer {
 		return list;
 	}
 
-	@RabbitListener(queues = "${rabbitmq.props.queue}")
-	public void readMessageInQueue(final byte[] data) {
-		try {
-			System.out.println(DataEncrypt.decrypt(ProtoBufDemo.Notification.parseFrom(data).getMessage(), secretKey));
-		} catch (InvalidProtocolBufferException ipbe) {
-			System.out.println("ERROR: Unable to instantiate Proto instance - " + ipbe);
-		}
-	}
+//	@RabbitListener(queues = "${rabbitmq.props.queue}")
+//	public void readMessageInQueue(final byte[] data) {
+//		try {
+//			System.out.println(DataEncrypt.decrypt(ProtoBufDemo.Notification.parseFrom(data).getMessage(), secretKey));
+//		} catch (InvalidProtocolBufferException ipbe) {
+//			System.out.println("ERROR: Unable to instantiate Proto instance - " + ipbe);
+//		}
+//	}
 }

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.rabbitmqdemo.consumer.NotificationConsumer;
 import com.example.rabbitmqdemo.entity.Notification;
 import com.example.rabbitmqdemo.util.DataEncrypt;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import com.example.protobuf.*;
 
 @RestController
@@ -36,10 +39,9 @@ public class NotificationProducer {
 		return "Notification Sent!";
 	}
 
-	@GetMapping("/getMessage")
+	@GetMapping(path = "/getMessage")
 	public String getNotif() {
 		return ProtoBufDemo.Notification.newBuilder().setMessage("Hello World!").toString()
 				.concat(ProtoBufDemo.Notification.newBuilder().setStatus("Sent!").toString());
 	}
-
 }
