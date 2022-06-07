@@ -11,8 +11,7 @@ This is a simple demo project created using Springboot which utilizes a non-http
 4) Consumer - Responsible for collecting the data from MQ, Decrypting and storing the data in a list for simplicity
 
 ### Exposed End-Points:
-1) /send - Sends the encrypted data to the MQ
-2) /getMessage - Displays the list populated by Consumer on the page
+Swagger-UI documentation is now available at http://localhost:8080/swagger-ui.html
 
 ## What does it include?
 1) Communication using RabbitMQ
